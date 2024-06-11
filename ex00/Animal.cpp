@@ -23,3 +23,18 @@ Animal::~Animal()
 {
 	std::cout << "Animal's destructor called" << std::endl;
 }
+
+void Animal::makeSound()
+{
+	
+}
+
+void Animal::setType(std::string type)
+{
+	this->_type = type;
+}
+
+std::string Animal::getType()
+{
+	return this->_type;
+}

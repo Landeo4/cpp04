@@ -10,6 +10,9 @@ class Animal{
 	Animal();
 	Animal(const Animal &nb);
 	Animal &operator=(const Animal &a);
+	const void makeSound();
+	void setType(std::string type);
+	const std::string getType();
 	~Animal();
 	private:
 
