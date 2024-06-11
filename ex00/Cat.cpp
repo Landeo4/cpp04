@@ -25,7 +25,7 @@ Cat::~Cat()
 	std::cout << "Cat's destructor called" << std::endl;
 }
 
-const std::string Cat::getType()
+std::string Cat::getType() const
 {
 	return this->_type;
 } 
@@ -35,7 +35,7 @@ void Cat::setType(std::string type)
 	this->_type = type;
 }
 
-const void makeSound()
+void Cat::makeSound() const
 {
 	std::cout << "intensive Meowing" << std::endl;
 }

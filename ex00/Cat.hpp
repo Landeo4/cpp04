@@ -10,9 +10,9 @@ class Cat: public Animal
 	Cat(const Cat &nb);
 	Cat &operator=(const Cat &a);
 	~Cat();
-	virtual const std::string getType();
+	virtual std::string getType() const;
 	virtual void setType(std::string type);
-	virtual void makeSound();
+	void makeSound() const;
 	private:
 };
 

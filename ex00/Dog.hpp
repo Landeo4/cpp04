@@ -10,9 +10,9 @@ class Dog: public Animal
 	Dog(const Dog &nb);
 	Dog &operator=(const Dog &a);
 	~Dog();
-	virtual const std::string getType();
+	virtual std::string getType() const;
 	virtual void setType(std::string type);
-	virtual void makeSound();
+	void makeSound() const;
 	private:
 };
 
