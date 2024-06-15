@@ -14,7 +14,8 @@ class Dog: public Animal
 	virtual std::string getType() const;
 	virtual void setType(std::string type);
 	void makeSound() const;
-	std::string Dog::getIdea();
+	std::string getIdea(int id);
+	void SetIdea(int id, std::string idea);
 	private:
 	Brain* _bn;
 };

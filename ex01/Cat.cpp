@@ -37,6 +37,17 @@ void Cat::setType(std::string type)
 	this->_type = type;
 }
 
+std::string Cat::getIdea(int id)
+{
+	// trouver comment utiliser le nb d'idee
+	return this->_bn->ideas[id];
+}
+
+void Cat::SetIdea(int id, std::string idea)
+{
+	this->_bn->ideas[id] = idea;
+}
+
 void Cat::makeSound() const
 {
 	std::cout << "intensive Meowing" << std::endl;

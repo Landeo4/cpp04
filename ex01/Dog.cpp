@@ -14,11 +14,10 @@ Dog:: Dog(const Dog &nb)
 
 Dog &Dog::operator=(const Dog &a)
 {
-	if (this != &a)
-	{
-		this->_bn = a._bn;
-	}
-	return *this;
+	Dog* bv = new Dog();
+	delete this;
+	bv->_bn = a._bn;
+	return *bv;
 }
 
 Dog::~Dog()
@@ -37,9 +36,14 @@ void Dog::setType(std::string type)
 	this->_type = type;
 }
 
-std::string Dog::getIdea(void)
+std::string Dog::getIdea(int id)
 {
-	return this->_bn->ideas;
+	return this->_bn->ideas[id];
+}
+
+void Dog::SetIdea(int id, std::string idea)
+{
+	this->_bn->ideas[id] = idea;
 }
 
 void Dog::makeSound() const
