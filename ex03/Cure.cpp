@@ -3,7 +3,7 @@
 
 Cure::Cure() : AMateria("cure")
 {
-
+	std::cout << "Cure created" << std::endl;
 }
 
 Cure:: Cure(const Cure & a) : AMateria("cure")

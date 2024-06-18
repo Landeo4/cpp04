@@ -4,6 +4,7 @@
 #include <iostream>
 #include <new>
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter
 {
@@ -13,12 +14,12 @@ class Character : public ICharacter
 	Character &operator=(const Character &a);
 	~Character();
 	virtual std::string const & getName() const;
-	virtual void equip(AMateria* m);
-	virtual void unequip(int idx);
-	virtual void use(int idx, ICharacter& target);
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, ICharacter& target);
 	private:
-		std::string _Name;
-
+	std::string _Name;
+	AMateria* _inventory[4];
 };
 
 #endif

@@ -2,8 +2,7 @@
 
 AMateria::AMateria()
 {
-	AMateria *bag = new AMateria[4];
-	this->_bag = bag;
+
 }
 
 AMateria::AMateria(const AMateria &a)
@@ -13,8 +12,10 @@ AMateria::AMateria(const AMateria &a)
 
 AMateria &AMateria::operator=(const AMateria &a)
 {
-	this->_bag = a._bag;
-	this->_type = a._type;
+	if (this != &a)
+	{
+		this->_type = a._type;
+	}
 	return *this;
 }
 
@@ -30,10 +31,7 @@ std::string const & AMateria::getType() const
 
 void AMateria::learnMateria(AMateria* obj)
 {
-	int i = 0;
-	while (this->_bag[i])
-		i++;
-	this->_bag[i] = obj;
+	this->_learnedMateria = obj;
 }
 
 AMateria* AMateria::createMateria(std::string const & type)

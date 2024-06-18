@@ -26,8 +26,7 @@ class AMateria : IMateriaSource
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 	private:
-	AMateria* _bag;
-	AMateria* _createdMateria;
+	AMateria* _learnedMateria;
 };
 
 #endif

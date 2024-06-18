@@ -3,7 +3,7 @@
 
 Ice::Ice() : AMateria("Ice")
 {
-
+	std::cout << "Ice created" << std::endl;
 }
 
 Ice:: Ice(const Ice & a) : AMateria("Ice")
