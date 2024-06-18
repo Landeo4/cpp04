@@ -7,6 +7,9 @@
 #include "IMateriaSource.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
+
+class Cure;
+class Ice;
 class IMateriaSource;
 
 class AMateria : IMateriaSource
