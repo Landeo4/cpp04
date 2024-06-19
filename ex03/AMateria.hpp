@@ -4,15 +4,8 @@
 #include <string.h>
 #include <iostream>
 #include "ICharacter.hpp"
-#include "IMateriaSource.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
 
-class Cure;
-class Ice;
-class IMateriaSource;
-
-class AMateria : IMateriaSource
+class AMateria
 {
 	protected:
 		std::string _type;
@@ -22,8 +15,6 @@ class AMateria : IMateriaSource
 		AMateria &operator=(const AMateria &a);
 		~AMateria();
 		AMateria(std::string const &type);
-		virtual void learnMateria(AMateria*);
-		virtual AMateria* createMateria(std::string const & type);
 		std::string const & getType() const; // return materia type
 
 		virtual AMateria* clone() const = 0;

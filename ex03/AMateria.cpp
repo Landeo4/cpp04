@@ -28,23 +28,3 @@ std::string const & AMateria::getType() const
 {
 	return this->_type;
 }
-
-void AMateria::learnMateria(AMateria* obj)
-{
-	this->_learnedMateria = obj;
-}
-
-AMateria* AMateria::createMateria(std::string const & type)
-{
-	if (type.compare("ice"))
-	{
-		Ice *ice = new Ice;
-		return (ice);
-	}
-	else if (type.compare("cure"))
-	{
-		Cure *cure = new Cure;
-		return cure;
-	}
-	return (NULL);
-}

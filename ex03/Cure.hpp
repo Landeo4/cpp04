@@ -6,8 +6,6 @@
 #include "AMateria.hpp"
 #include <new>
 
-class AMateria;
-
 class Cure : public AMateria
 {
 	public:
