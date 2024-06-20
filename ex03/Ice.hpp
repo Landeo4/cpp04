@@ -1,10 +1,9 @@
 #ifndef ICE_HPP
 #define ICE_HPP
 
-#include <string.h>
-#include <iostream>
 #include "AMateria.hpp"
-#include <new>
+
+class AMateria;
 
 class Ice : public AMateria
 {
@@ -12,7 +11,7 @@ class Ice : public AMateria
 	Ice();
 	Ice(const Ice &a);
 	Ice &operator=(const Ice &a);
-	~Ice();
+	virtual ~Ice();
 	AMateria* clone() const;
 	private:
 	

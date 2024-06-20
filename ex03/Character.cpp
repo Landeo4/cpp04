@@ -37,7 +37,6 @@ void Character::equip(AMateria* m)
 	if (i > 3)
 		return ;
 	AMateria* cpy = m;
-	delete m;
 	this->_inventory[i] = cpy;
 }
 

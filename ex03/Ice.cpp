@@ -1,12 +1,11 @@
-#include "AMateria.hpp"
 #include "Ice.hpp"
 
-Ice::Ice() : AMateria("Ice")
+Ice::Ice()
 {
 	std::cout << "Ice created" << std::endl;
 }
 
-Ice:: Ice(const Ice & a) : AMateria("Ice")
+Ice:: Ice(const Ice & a)
 {
 	*this = a;
 }

@@ -6,8 +6,6 @@
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
-class AMateria;
-
 class ICharacter
 {
 	public:

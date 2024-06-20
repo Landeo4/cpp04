@@ -1,12 +1,11 @@
-#include "AMateria.hpp"
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("cure")
+Cure::Cure()
 {
 	std::cout << "Cure created" << std::endl;
 }
 
-Cure:: Cure(const Cure & a) : AMateria("cure")
+Cure:: Cure(const Cure & a)
 {
 	*this = a;
 }
