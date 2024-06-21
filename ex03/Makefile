@@ -5,6 +5,7 @@ SRCS	=	main.cpp \
 			Cure.cpp \
 			Ice.cpp \
 			AMateria.cpp \
+			MateriaSource.cpp \
 			
 			
 

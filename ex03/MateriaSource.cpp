@@ -2,7 +2,8 @@
 
 MateriaSource::MateriaSource()
 {
-
+	for (int i = 0; i <= 3; i++)
+		this->_learnedMateria[i] = NULL; 
 }
 
 MateriaSource::MateriaSource(const MateriaSource &a)
@@ -22,25 +23,40 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &a)
 
 MateriaSource::~MateriaSource()
 {
-
+	for (int i = 0; i <= 3; i++)
+		delete this->_learnedMateria[i];
+	
 }
 
 void MateriaSource::learnMateria(AMateria* obj)
 {
-	_learnedMateria[1] = obj;
+	int i = 0;
+	if (!obj)
+	{
+		std::cout << "Problem with your obj" << std::endl;
+		return ;
+	}
+	while (_learnedMateria[i])
+		i++;
+	if (i == 4)
+	{
+		std::cout << "Inventory full" << std::endl;
+		return ;
+	}
+	_learnedMateria[i] = obj->clone();
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	if (type.compare("ice"))
 	{
-		AMateria *ice;
-		return (ice);
+		AMateria* ice = new Ice();
+		return ice;
 	}
 	else if (type.compare("cure"))
 	{
-		AMateria *Cure;
-		return Cure;
+		AMateria* cure = new Cure();
+		return cure;
 	}
 	return (NULL);
 }

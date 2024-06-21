@@ -14,7 +14,7 @@ class Ice : public AMateria
 	virtual ~Ice();
 	AMateria* clone() const;
 	private:
-	
+
 };
 
 #endif

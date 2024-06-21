@@ -9,6 +9,7 @@
 class Character : public ICharacter
 {
 	public:
+	Character(void);
 	Character(std::string Name);
 	Character(const Character &a);
 	Character &operator=(const Character &a);

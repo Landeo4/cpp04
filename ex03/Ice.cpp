@@ -1,8 +1,9 @@
 #include "Ice.hpp"
 
-Ice::Ice()
+Ice::Ice(): AMateria
 {
 	std::cout << "Ice created" << std::endl;
+	
 }
 
 Ice:: Ice(const Ice & a)
@@ -12,10 +13,7 @@ Ice:: Ice(const Ice & a)
 
 Ice &Ice::operator=(const Ice &a)
 {
-	if (this != &a)
-	{
-		this->_type = a._type;
-	}
+	(void)a;
 	return *this;
 }
 
@@ -24,7 +22,7 @@ Ice::~Ice()
 
 }
 
-AMateria* AMateria::clone() const
+AMateria* Ice::clone() const
 {
 	Ice *cur = new Ice;
 	return (cur);
