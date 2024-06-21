@@ -1,9 +1,9 @@
 #include "Ice.hpp"
 
-Ice::Ice(): AMateria
+Ice::Ice()
 {
 	std::cout << "Ice created" << std::endl;
-	
+	_type = "ice";
 }
 
 Ice:: Ice(const Ice & a)
