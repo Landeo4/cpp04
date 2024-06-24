@@ -2,6 +2,7 @@
 
 Cure::Cure()
 {
+	this->_type = "cure";
 	std::cout << "Cure created" << std::endl;
 }
 

@@ -52,7 +52,7 @@ void Character::equip(AMateria* m)
 	if (i > 3)
 		return ;
 	this->_inventory[i] = m;
-	std::cout << "voici le materia qui a ete equipe " << this->_inventory[i] << std::endl;
+	std::cout << "voici le materia qui a ete equipe " << this->_inventory[i]->getType() << std::endl;
 }
 
 void Character::unequip(int idx)

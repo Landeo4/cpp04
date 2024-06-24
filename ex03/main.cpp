@@ -19,6 +19,7 @@ int main()
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
+	std::cout << "voici le materia qui va etre equiper " << tmp->getType() << std::endl;
 	me->equip(tmp);
 	// delete tmp;
 	tmp = src->createMateria("cure");
@@ -35,6 +36,15 @@ int main()
 	delete cure;
 	return 0;
 }
+
+//comment faire un main pour cet exo, il faut verifier:
+// si la creation de personnage fonctionne
+// si la creation de Materia fonctionne
+// si ce sont des deeps copy
+// verifier si l'inventaire a bien 4 slots et leurs coherence (position)
+// remplir les slots de l'inventaire avec toute sorte de combinaison
+//  utiliser plusieurs Materia en meme temps
+// free toute les chose au dessus pour verifer les leaks
 
 // int main()
 // {

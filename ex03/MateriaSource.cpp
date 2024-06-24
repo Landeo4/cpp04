@@ -51,11 +51,13 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	if (type.compare("ice"))
 	{
 		AMateria* ice = new Ice();
+		std::cout << ice->getType() << " have been created in createMateria" << std::endl;
 		return ice;
 	}
 	else if (type.compare("cure"))
 	{
 		AMateria* cure = new Cure();
+		std::cout << cure->getType() << " have been created in createMateria" << std::endl;
 		return cure;
 	}
 	return (NULL);
