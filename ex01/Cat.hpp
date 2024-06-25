@@ -11,6 +11,7 @@ class Cat: public Animal
 	Cat(const Cat &nb);
 	Cat &operator=(const Cat &a);
 	~Cat();
+	
 	virtual std::string getType() const;
 	virtual void setType(std::string type);
 	std::string getIdea(int id);

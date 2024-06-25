@@ -23,7 +23,7 @@ int main()
 		u[i]->makeSound();
 	for (int i = 0; i < 10; i++)
 	{
-		std::cout << "=== voici l'index === " << i << std::endl;
+		// std::cout << "=== voici l'index === " << i << std::endl;
 		delete u[i];
 	}
 	delete j;//should not create a leak

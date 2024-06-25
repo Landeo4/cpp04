@@ -9,15 +9,20 @@ Dog::Dog()
 
 Dog:: Dog(const Dog &nb)
 {
+	if (this->_bn)
+		delete this->_bn;
 	*this = nb;
 }
 
 Dog &Dog::operator=(const Dog &a)
 {
-	Dog* bv = new Dog();
-	delete this;
-	bv->_bn = a._bn;
-	return *bv;
+	if (this->_bn)
+		delete this->_bn;
+	if (this != &a)
+	{
+		this->_bn = a._bn;
+	}
+	return *this;
 }
 
 Dog::~Dog()

@@ -26,7 +26,7 @@ int main()
 		std::cout << "=== voici l'index === " << i << std::endl;
 		delete u[i];
 	}
-	delete j;//should not create a leak
+	delete j;
 	delete i;
 
 	return 0;

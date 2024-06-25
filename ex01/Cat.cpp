@@ -9,11 +9,15 @@ Cat::Cat()
 
 Cat:: Cat(const Cat &nb)
 {
+	if (this->_bn)
+		delete this->_bn;
 	*this = nb;
 }
 
 Cat &Cat::operator=(const Cat &a)
 {
+	if (this->_bn)
+		delete this->_bn;
 	if (this != &a)
 	{
 		this->_bn = a._bn;

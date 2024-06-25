@@ -8,6 +8,7 @@
 
 int main()
 {
+	std::cout << " creating a Character" << std::endl;
 	IMateriaSource* src = new MateriaSource();
 	AMateria* ice = new Ice();
 	AMateria* cure = new Cure();
@@ -16,6 +17,8 @@ int main()
 	src->learnMateria(cure);
 	src->learnMateria(cure);
 	src->learnMateria(cure);
+	std::cout << "Deep copy verification" << std::endl;
+	std::cout << "verif all inventory slot position and coherence" << std::endl;
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
@@ -25,8 +28,10 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
+	std::cout << "using AMateria" << std::endl;
 	me->use(0, *bob);
 	me->use(1, *bob);
+	std::cout << "copying character and check if he have the same spell" << std::endl;
 	*me = *bob;
 	delete bob;
 	delete me;
@@ -44,6 +49,7 @@ int main()
 // verifier si l'inventaire a bien 4 slots et leurs coherence (position)
 // remplir les slots de l'inventaire avec toute sorte de combinaison
 //  utiliser plusieurs Materia en meme temps
+// faire tous ca en verifiant les deep copy
 // free toute les chose au dessus pour verifer les leaks
 
 // int main()
