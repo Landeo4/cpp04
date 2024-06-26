@@ -25,12 +25,12 @@ int main()
 	std::cout << "verification of all inventory slot position and coherence" << std::endl;
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
+	AMateria* ew;
 	tmp = src->createMateria("ice");
 	std::cout << "voici le materia qui va etre equiper " << tmp->getType() << std::endl;
 	me->equip(tmp);
-	// delete tmp;
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	ew = src->createMateria("cure");
+	me->equip(ew);
 	ICharacter* bob = new Character("bob");
 	std::cout << "using AMateria" << std::endl;
 	me->use(0, *bob);
@@ -38,9 +38,10 @@ int main()
 	std::cout << "copying character and check if he have the same spell" << std::endl;
 	*me = *bob;
 	delete bob;
+	delete ew;
 	delete me;
-	delete src;
 	delete tmp;
+	delete src;
 	delete ice;
 	delete cure;
 	delete Tom;

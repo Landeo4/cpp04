@@ -48,17 +48,18 @@ void MateriaSource::learnMateria(AMateria* obj)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	if (type.compare("ice"))
+	if (type.compare("ice") == 0)
 	{
 		AMateria* ice = new Ice();
 		std::cout << ice->getType() << " have been created in createMateria" << std::endl;
 		return ice;
 	}
-	else if (type.compare("cure"))
+	else if (type.compare("cure") == 0)
 	{
 		AMateria* cure = new Cure();
 		std::cout << cure->getType() << " have been created in createMateria" << std::endl;
 		return cure;
 	}
+	std::cout << "unknown Materia" << std::endl;
 	return (NULL);
 }
