@@ -47,6 +47,11 @@ std::string const &Character::getName() const
 void Character::equip(AMateria* m)
 {
 	int i = 0;
+	if (!m)
+	{
+		std::cout << "A problem happend with your Materia" << std::endl;
+		return ;
+	}
 	while (this->_inventory[i])
 		i++;
 	if (i > 3)
@@ -58,6 +63,11 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
+	if (idx > 3)
+	{
+		std::cout << "Your slot number is invalid please put between 0 and 3" << std::endl;
+		return ;
+	}
 	this->_inventory[idx] = NULL;
 }
 
@@ -65,6 +75,11 @@ void Character::use(int idx, ICharacter& target)
 {
 	// std::string str = this->_inventory[idx]->getType();
 	(void)target;
+	if (idx > 3)
+	{
+		std::cout << "Your slot number is invalid please put between 0 and 3" << std::endl;
+		return ;
+	}
 	if (!this->_inventory[idx])
 	{
 		std::cout << "nothing is equip at this slot" << std::endl;
