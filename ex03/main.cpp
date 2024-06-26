@@ -23,6 +23,7 @@ int main()
 	src->learnMateria(cure);
 	std::cout << "====== Deep copy verification ======" << std::endl;
 	AMateria* spell;
+	std::cout << "====== verification of all inventory slot position and coherence ======" << std::endl;
 	spell = src->createMateria("cure");
 	ICharacter* charac = new Character("charac");
 	charac->use(0, *Tom);
@@ -41,7 +42,6 @@ int main()
 	charac->use(2, *Tom);
 	delete spell;
 	delete charac;
-	std::cout << "====== verification of all inventory slot position and coherence ======" << std::endl;
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
 	AMateria* ew;
