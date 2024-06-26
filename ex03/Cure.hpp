@@ -12,6 +12,7 @@ class Cure : public AMateria
 	Cure(const Cure &a);
 	Cure &operator=(const Cure &a);
 	virtual ~Cure();
+	
 	AMateria* clone() const;
 	private:
 	

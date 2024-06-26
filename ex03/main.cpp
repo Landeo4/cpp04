@@ -12,13 +12,17 @@ int main()
 	IMateriaSource* src = new MateriaSource();
 	AMateria* ice = new Ice();
 	AMateria* cure = new Cure();
+	ICharacter* Tom = new Character("tom");
+	ICharacter* dummy = new Character("dummy");
+	Tom->use(0, *dummy);
+	Tom->use(1, *dummy);
 	std::cout << "=== CREATING 4 MATERIA ===" << std::endl;
 	src->learnMateria(ice);
 	src->learnMateria(cure);
 	src->learnMateria(cure);
 	src->learnMateria(cure);
 	std::cout << "Deep copy verification" << std::endl;
-	std::cout << "verif all inventory slot position and coherence" << std::endl;
+	std::cout << "verification of all inventory slot position and coherence" << std::endl;
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
@@ -39,8 +43,12 @@ int main()
 	delete tmp;
 	delete ice;
 	delete cure;
+	delete Tom;
+	delete dummy;
 	return 0;
 }
+
+//probleme avec le type
 
 //comment faire un main pour cet exo, il faut verifier:
 // si la creation de personnage fonctionne

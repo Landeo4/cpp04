@@ -51,7 +51,9 @@ void Character::equip(AMateria* m)
 		i++;
 	if (i > 3)
 		return ;
-	this->_inventory[i] = m;
+	AMateria* tmp;
+	tmp = m->clone();
+	this->_inventory[i] = tmp;
 	std::cout << "voici le materia qui a ete equipe " << this->_inventory[i]->getType() << std::endl;
 }
 
@@ -62,9 +64,22 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	std::string str = this->_inventory[idx]->getType();
-	if (this->_inventory[idx])
-		std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
-	else if (this->_inventory[idx])
-		std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	// std::string str = this->_inventory[idx]->getType();
+	(void)target;
+	std::cout << "Debut de use" << std::endl;
+	if (!this->_inventory[idx])
+	{
+		std::cout << "nothing is equip at this slot" << std::endl;
+		return ;
+	}
+	std::cout << "je reessaye un message" << std::endl;
+	std::cout << this->_inventory[idx] << std::endl;
+	std::cout << this->_inventory[idx]->getType() << std::endl;
+	// if (this->_inventory[idx]->getType().compare("ice") == 0)
+	// 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	// else if (this->_inventory[idx]->getType().compare("cure") == 0)
+	// 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }
+
+// regler cette fonction
+// probleme avec le type
