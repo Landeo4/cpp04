@@ -7,20 +7,20 @@ Dog::Dog()
 	setType("Dog");
 }
 
-Dog:: Dog(const Dog &nb)
+Dog:: Dog(const Dog &copy)
 {
-	if (this->_bn)
-		delete this->_bn;
-	*this = nb;
+	this->_bn = new Brain();
+	*this = copy;
 }
 
 Dog &Dog::operator=(const Dog &a)
 {
-	if (this->_bn)
-		delete this->_bn;
+	delete this->_bn;
 	if (this != &a)
 	{
-		this->_bn = a._bn;
+		this->_type = a._type;
+		this->_bn = new Brain();
+		*this->_bn = *a._bn;
 	}
 	return *this;
 }

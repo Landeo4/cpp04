@@ -18,7 +18,8 @@ Character::Character(const Character &a)
 {
 	for (int i = 0; i <= 3; i++)
 		this->_inventory[i] = NULL;
-	*this = a;
+	for(int i = 0; i <= 3 && a._inventory[i]; i++)
+		this->_inventory[i] = a._inventory[i];
 }
 
 Character &Character:: operator=(const Character &a)

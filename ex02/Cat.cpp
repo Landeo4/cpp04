@@ -7,16 +7,20 @@ Cat::Cat()
 	setType("Cat");
 }
 
-Cat:: Cat(const Cat &nb)
+Cat:: Cat(const Cat &copy)
 {
-	*this = nb;
+	this->_bn = new Brain();
+	*this = copy;
 }
 
 Cat &Cat::operator=(const Cat &a)
 {
+	delete this->_bn;
 	if (this != &a)
 	{
-		this->_bn = a._bn;
+		this->_type = a._type;
+		this->_bn = new Brain();
+		*this->_bn = *a._bn;
 	}
 	return *this;
 }

@@ -7,6 +7,7 @@ AMateria::AMateria()
 
 AMateria::AMateria(const AMateria &a)
 {
+	
 	*this = a;
 }
 

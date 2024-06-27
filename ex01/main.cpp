@@ -12,6 +12,11 @@ int main()
 	const Animal* i = new Cat();
 	const Animal* u[10];
 
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+
 	for (int i = 0; i < 10; i++)
 	{
 		if (i < 5)

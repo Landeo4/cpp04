@@ -25,9 +25,9 @@ int main()
 	q->makeSound();
 
 	std::cout << "===Now free the Animals===" << std::endl;
+	delete  q;
 	delete  i;
 	delete  j;
-	delete  q;
 	delete  meta;
 	return 0;
 }
